@@ -6,11 +6,8 @@ import (
   "api"
 )
 // Server represents the gRPC server
-type ServerInterface {
-}
-
-func (si *ServerInterface) SayHello(ctx context.Context, in *api.RequestMessage) (*api.ResponseMessage, error) {
-	log.Printf("[SERVER_INTERFACE] SayHello not implemented yet")
+type ServerInterface interface {
+	SayHello(ctx context.Context, in *api.RequestMessage) (*api.ResponseMessage, error)
 }
 
 type Server struct {
